@@ -1,34 +1,21 @@
-package com.clinic.app.entities;
+package com.clinic.app.dto;
 
 import java.sql.Date;
 import java.sql.Time;
 
+import com.clinic.app.entities.Doctor;
+import com.clinic.app.entities.Receptionist;
+
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-public class Patient {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class PatientDTO {
 	private int id;
 	private String name;
 	private int age;
 	private String sex;
-	
-	@Column(name = "phone_number")
 	private String phoneNumber;
-	
 	private Date appointmentDate;
 	private Time time;
 	
@@ -47,5 +34,4 @@ public class Patient {
 	private boolean isActive;
 	private Date createdAt;
 	private Date updatedAt;
-
 }
